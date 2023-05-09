@@ -1,0 +1,15 @@
+
+State Machine - |ATCONV|current_state
+Name current_state.DONE current_state.POST_MXPOL current_state.MAXPOOLING current_state.GET_DATA2 current_state.LOAD_L0 current_state.RELU current_state.ADDBIAS current_state.POST_CONV current_state.CONV current_state.GET_DATA current_state.PRE_CONV current_state.0000 
+current_state.0000 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.PRE_CONV 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.GET_DATA 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.CONV 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.POST_CONV 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.ADDBIAS 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.RELU 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.LOAD_L0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.GET_DATA2 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.MAXPOOLING 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.POST_MXPOL 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.DONE 1 0 0 0 0 0 0 0 0 0 0 1 
