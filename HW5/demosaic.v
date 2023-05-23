@@ -15,50 +15,54 @@ output reg wr_b;
 output reg [13:0] addr_b;
 output reg [7:0] wdata_b;
 input [7:0] rdata_b;
-output done;
+output reg done;
 
-localparam BGGR = 2'b00,
-           GBRG = 2'b01,
-           GRBG = 2'b11,
-           RGGB = 2'b10;
+localparam BGGR = 2'b11,
+           GBRG = 2'b10,
+           GRBG = 2'b01,
+           RGGB = 2'b00;
 
 
-reg [7:0] line_buf_matrix[382:0];
+reg [7:0] line_buf_matrix[0:383];
 reg [8:0] line_buf_idx;
 reg [6:0] line_buf, line_row;
 reg       odd_even_row;
-reg [7:0] green_val, red_val, blue_val;
-
+reg [9:0] green_val, red_val, blue_val;
+reg       first_data_ready;
 // data is valid for calculation for interpolation 
 wire cal_valid;
 // Mode BGGR / GBRG / GRBG / RGGB
 wire [1:0] mode;
 
 integer i;
-
-assign cal_valid = (line_buf_idx > 258); 
+ 
 assign mode = {odd_even_row, line_buf_idx[0]};             // odd_evne_row flag decide the start point of interpolace of BGGR or GRBG, lin_buf_idx decide the interpolace of BGGR/GBRG and GRBG/RGGB 
-
+assign cal_valid = (first_data_ready && (line_buf_idx == 256)) || (line_buf_idx > 258);
 
 // store Byer image pixels into line buffer matrix register. When store till 258 pixel then can start to calculate and output first pixel RGB value.
 always@(posedge clk or posedge reset) begin
     if(reset) begin
         line_buf_idx <= 0;
-        odd_even_row <= 1;      // start from odd row
+        first_data_ready <= 0;
     end
     else if(in_en) begin
+        if(line_buf_idx == 383)
+            first_data_ready <= 1;
+        
         if(line_buf_idx == 383) begin               //reset to index 256， other pixels shift up a row.
             line_buf_idx <= 256;
-            for(i=0; i<128; i=i+1) begin
-                line_buf_matrix[i] <= line_buf_matrix[i+128];
-                line_buf_matrix[i+128] <= line_buf_matrix[i+256];
-            end
-            odd_even_row <= ~odd_even_row;          // switch to next row
         end            
-        else 
+        else
             line_buf_idx <= line_buf_idx + 1;
         
         line_buf_matrix[line_buf_idx] <= data_in;
+
+        if(first_data_ready && line_buf_idx == 256) begin
+            for(i=0; i<128; i=i+1) begin
+                    line_buf_matrix[i] <= line_buf_matrix[i+128];
+                    line_buf_matrix[i+128] <= line_buf_matrix[i+256];
+            end
+        end
     end
 end
 
@@ -67,11 +71,13 @@ always@(posedge clk or posedge reset) begin
     if(reset) begin
         line_buf <= 1;
         line_row <= 1;
+        odd_even_row <= 1;
     end
-    else begin
+    else if(cal_valid) begin
         if(line_buf == 126) begin
             line_buf <= 1;
             line_row <= line_row + 1;
+            odd_even_row <= ~odd_even_row;          // switch to next row
         end
         else
             line_buf <= line_buf + 1;
@@ -128,14 +134,22 @@ always@(posedge clk or posedge reset) begin
         addr_r <= 0;
         addr_g <= 0;
         addr_b <= 0;
+        wr_r <= 0;
+        wr_g <= 0;
+        wr_b <= 0;
     end
     else if(cal_valid) begin
         addr_r <= {line_row,line_buf};
         addr_g <= {line_row,line_buf};
         addr_b <= {line_row,line_buf};
-        wr_r <= red_val;
-        wr_g <= green_val;
-        wr_b <= blue_val;  
+        wr_r <= 1;
+        wr_g <= 1;
+        wr_b <= 1;
+        wdata_r <= red_val;
+        wdata_g <= green_val;
+        wdata_b <= blue_val;  
+
+        done <= ({line_row,line_buf} == 14'd16254);
     end
 end
 
