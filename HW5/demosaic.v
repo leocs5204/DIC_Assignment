@@ -20,185 +20,79 @@ output reg done;
 parameter WIDTH = 128;
 parameter HEIGHT = 128;
 
-localparam INIT = 0,
-           S_LINE1 = 1,
-           S_LINE2 = 2,
-           S_135_ODD = 3,
-           S_24_ODD = 4,
-           S_24_EVEN = 5,
-           S_135_EVEN = 6,
-           DONE = 7;
-
-reg [3:0] current_state, next_state;
-reg [7:0] line_buf1 [0 : WIDTH-1], line_buf2 [0 : WIDTH-1];            // declare line buffer 
-reg [6:0] pixel_col;
-reg [7:0] V1, V2, V3, V4, V5, V6, V7, V8, V9;                          // Define shift register
-reg [8:0] r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13;      // pipeline registers
-reg [17:0] c;
+reg       line_buf1_ready, line_buf2_ready;
+reg [7:0] line_buf1 [0 : WIDTH-1], line_buf2 [0 : WIDTH-1], line_buf3 [0 : WIDTH-1];            // declare line buffer 
+reg [6:0] pixel_col, col_idx, row_idx;
+reg [7:0] shift_reg[0:14];                          // Define shift registers
 reg [13:0] wr_addr;
+wire [7:0] KB_l, KB_r, KR_l, KR_r;
+wire [8:0] GH, GV;
 
 
-always@(posedge clk or posedge reset) begin 
-    if(reset) begin
-        current_state <= INIT;
-    end
-    else begin
-        current_state <= next_state;
-    end
-end
+integer i ;
 
+assign KB_l = shift_reg[4] - ((shift_reg[1] + shift_reg[7]) >> 1);       //G - (R left + R right)/2
+assign kB_r = shift_reg[10] - ((shift_reg[7] + shift_reg[13]) >> 1);     
+assign GH = shift_reg[7] + (KB_l + KB_r) >> 1;
+assign GV = (shift_reg[6] + shift_reg[8]) >> 1;
 
-always@(*) begin
-    case(current_state)
-        INIT : next_state = in_en ? S_LINE1 : INIT;
-
-        S_LINE1 : next_state = (pixel_col == (WIDTH-1)) ? S_LINE2 : S_LINE1;
-
-        S_LINE2 : next_state = (pixel_col == (WIDTH-1)) ? S_135_ODD : S_LINE2;
-
-        S_135_ODD : next_state = S_24_ODD;
-        
-        S_24_ODD : next_state = (pixel_col == (WIDTH-1)) ? S_24_EVEN : S_135_ODD;
-
-        S_24_EVEN : next_state = S_135_EVEN;
-
-        S_135_EVEN : next_state = (pixel_col == (WIDTH-1)) ? ( wr_addr == (HEIGHT-1) ? DONE : S_135_ODD) : S_24_EVEN;
-
-        DONE : next_state = !in_en ? INIT : DONE;
-
-        default : next_state = INIT;
-    endcase
-end
-
-always@(*) begin
-     case(current_state)
-
-        S_135_ODD : c = 18'b00_0010_0010_0000_0110;
-        
-        S_24_ODD : c = 18'b11_1101_1101_1111_1001;
-
-        S_24_EVEN : c = 18'b11_1101_1101_1111_1001;
-
-        S_135_EVEN : c = 18'b00_0010_0010_0000_0110;
-
-        default : c = c;
-    endcase
-end
-
-// line buffer behavior  and shift register storage
 always@(posedge clk or posedge reset) begin
     if(reset) begin
-        pixel_col <= 7'd0;
-        V1 <= 8'd0; 
-        V2 <= 8'd0; 
-        V3 <= 8'd0;
-        V4 <= 8'd0;
-        V5 <= 8'd0;
-        V6 <= 8'd0;
-        V7 <= 8'd0;
-        V8 <= 8'd0;
-        V9 <= 8'd0;
-    end
-    else begin
-        case(current_state)
-            INIT : begin
-                wr_r <= 0;
-                wr_b <= 0;
-                wr_g <= 0;
+        for(i=0; i<WIDTH; i=i+1) begin
+            line_buf1[i] <= 0;
+            line_buf2[i] <= 0;
+            line_buf3[i] <= 0;
+        end
+    end    
+    else if(in_en) begin
+        if(!line_buf1_ready) 
+            line_buf1[pixel_col] <= data_in;
+        else if(line_buf2_ready) 
+            line_buf2[pixel_col] <= data_in;
+        else begin
+            if(pixel_col==0) begin
+                for(i=0; i<WIDTH; i=i+1) begin
+                    line_buf1[i] <= line_buf2[i];
+                    line_buf2[i] <= line_buf3[i];
+                end
             end
-
-            S_LINE1 : begin
-                line_buf1[pixel_col] <= data_in;
-                pixel_col <= pixel_col + 1;
-            end
-
-            S_LINE2 : begin 
-                line_buf2[pixel_col] <= data_in;
-                pixel_col <= pixel_col + 1;
-            end
-
-            S_135_ODD : begin
-                V1 <= V2;
-                V2 <= V3; 
-                V3 <= V4;
-                V4 <= V7;
-                V5 <= V8;
-                V6 <= V9;                
-                V7 <= line_buf1[pixel_col];
-                V8 <= line_buf2[pixel_col];
-                V9 <= data_in;
-                line_buf1[pixel_col] <= data_in;             // store new row data into line buffer 1 at the same time.
-            end
-
-            S_24_ODD : begin
-                V1 <= V2;
-                V2 <= V3; 
-                V3 <= V4;
-                V4 <= V7;
-                V5 <= V8;
-                V6 <= V9; 
-                V7 <= line_buf1[pixel_col];
-                V8 <= line_buf2[pixel_col];
-                V9 <= data_in;
-                line_buf1[pixel_col] <= data_in;             // store new row data into line buffer 1 at the same time.
-            end
-
-            S_135_ODD : begin
-                V1 <= V2;
-                V2 <= V3; 
-                V3 <= V4;
-                V4 <= V7;
-                V5 <= V8;
-                V6 <= V9;                
-                V7 <= line_buf1[pixel_col];
-                V8 <= line_buf2[pixel_col];
-                V9 <= data_in;
-                line_buf2[pixel_col] <= data_in;             // store new row data into line buffer 2 at the same time.
-            end
-
-            S_24_ODD : begin
-                V1 <= V2;
-                V2 <= V3; 
-                V3 <= V4;
-                V4 <= V7;
-                V5 <= V8;
-                V6 <= V9; 
-                V7 <= line_buf2[pixel_col];
-                V8 <= line_buf1[pixel_col];
-                V9 <= data_in;
-                line_buf2[pixel_col] <= data_in;             // store new row data into line buffer 2 at the same time.
-            end
-
-        endcase
+            line_buf3[pixel_col] <= data_in;
+        end
     end
 end
 
-// Calculation of each stage
+// assign shift registers
+always@(*) begin
+    if(reset) begin
+        for(i=0; i<15; i=i+1)
+            shift_reg[i] <= 8'd0;
+    end
+    else begin 
+        shift_reg[0] <= line_buf1[col_idx-2];
+        shift_reg[1] <= line_buf2[col_idx-2];
+        shift_reg[2] <= line_buf3[col_idx-2];
+        shift_reg[3] <= line_buf1[col_idx-1];
+        shift_reg[4] <= line_buf2[col_idx-1];
+        shift_reg[5] <= line_buf3[col_idx-1];
+        shift_reg[6] <= line_buf1[col_idx];
+        shift_reg[7] <= line_buf2[col_idx];
+        shift_reg[8] <= line_buf3[col_idx];
+        shift_reg[9] <= line_buf1[col_idx+1];
+        shift_reg[10] <= line_buf2[col_idx+1];
+        shift_reg[11] <= line_buf3[col_idx+1];
+        shift_reg[12] <= line_buf1[col_idx+2];
+        shift_reg[13] <= line_buf2[col_idx+2];
+        shift_reg[14] <= line_buf3[col_idx+2];
+    end
+
+end
+
+
+// Calculation
 always@(posedge clk or posedge reset) begin
     if(reset) begin
-
-    end
-    else begin
-        case(current_state)
-            S_135_ODD : begin 
-                // Stage 1
-                r1 <= V7 + V9;
-                r2 <= (V7 > V9) ? V7 - V9 : V9 - V7;
-                r3 <= V4 + V6;
-
-                // Stage 3 
-                r4 <= ((r11 << 1) + r11) >> 3 + r12;
-                r5 <= r2 ? (V1 + V8) >> 4 : (((V1+V8) << 1) + (V1 + V8)) >> 4;
-                r6 <= V5 + ((V3 + V8) >> 1);
-                r7 <= r7;
-                r8 <= r3 + V4 + V6;
-                r9 <= (V4 + V6) >> 1;
-                r10 <= r1;
-
-                // Stage 5
-                
-            end
-        endcase
+        col_idx <= 1;
+        row_idx <= 1;
     end
 end
 
