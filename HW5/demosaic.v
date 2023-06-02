@@ -207,15 +207,15 @@ always@(*) begin
             b_hat <= shift_reg[7];
         end
         
-        2'b01: begin              // G phase: RGGB
+        2'b00: begin              // G phase: RGGB
             r_hat <= shift_reg[7] - ((KRG_l + KRG_r) >> 1);
             g_hat <= shift_reg[7];
             b_hat <= shift_reg[7] - ((KBG_t + KBG_l) >> 1);
         end
         
-        2'b00: begin              // B phase: GRBG
+        2'b01: begin              // B phase: GRBG
             r_hat = shift_reg[7];
-            g_hat = (weight_sel) ? ((GV- (GV >> 2)) + (GH >> 2)) : (GH- (GH >> 2)) + (GV >> 2);
+            g_hat = (weight_sel) ? ((GV- (GV >> 2)) + (GH >> 2)) : ((GH- (GH >> 2)) + (GV >> 2));
             b_hat <= g_hat - ((KB_t + KB_b + KB_l + KB_r) >> 2);
         end
     endcase
