@@ -23,7 +23,7 @@ parameter HEIGHT = 128;
 reg       line_buf1_ready, line_buf2_ready, line_buf3_ready;
 reg [7:0] line_buf1 [0 : WIDTH-1], line_buf2 [0 : WIDTH-1], line_buf3 [0 : WIDTH-1];            // declare line buffer 
 reg [6:0] pixel_col, col_idx, row_idx;
-reg [7:0] shift_reg[0:14];                          // Define shift registers
+reg signed [8:0] shift_reg[0:14];                          // Define shift registers
 reg [13:0] wr_addr;
 reg signed [11:0] KB_l, KB_r, KB_t, KB_b, KR_l, KR_r, KR_t, KR_b;
 reg signed [11:0] KBG_l, KBG_r, KBG_t, KBG_b, KRG_l, KRG_r, KRG_t, KRG_b;
@@ -140,53 +140,53 @@ always@(*) begin
     case({row_idx[0], col_idx[0]})
         2'b11: begin              // G phase: BGGR
             // interpolate R
-            KRG_t = ((shift_reg[3] + shift_reg[9]) >> 1) - shift_reg[6];
-            KRG_b = ((shift_reg[5] + shift_reg[11]) >> 1) - shift_reg[8];
+            KRG_t = ((shift_reg[3] + shift_reg[9]) >>> 1) - shift_reg[6];
+            KRG_b = ((shift_reg[5] + shift_reg[11]) >>> 1) - shift_reg[8];
             // interpolate B
-            KBG_l = ((shift_reg[1] + shift_reg[3] + shift_reg[5] + shift_reg[7]) >> 2) - shift_reg[4];
-            KBG_r = ((shift_reg[7] + shift_reg[9] + shift_reg[11] + shift_reg[13]) >> 2) - shift_reg[10];
+            KBG_l = ((shift_reg[1] + shift_reg[3] + shift_reg[5] + shift_reg[7]) >>> 2) - shift_reg[4];
+            KBG_r = ((shift_reg[7] + shift_reg[9] + shift_reg[11] + shift_reg[13]) >>> 2) - shift_reg[10];
         end
 
         2'b10: begin              // B phase: GBRG
             // interpolation G
-            KB_l = shift_reg[4] - ((shift_reg[1] + shift_reg[7]) >> 1);       //G - (R left + R right)/2
-            KB_r = shift_reg[10] - ((shift_reg[7] + shift_reg[13]) >> 1);     
-            GH = shift_reg[7] + ((KB_l + KB_r) >> 1);
-            GV = (shift_reg[6] + shift_reg[8]) >> 1;
+            KB_l = shift_reg[4] - ((shift_reg[1] + shift_reg[7]) >>> 1);       //G - (R left + R right)/2
+            KB_r = shift_reg[10] - ((shift_reg[7] + shift_reg[13]) >>> 1);     
+            GH = shift_reg[7] + ((KB_l + KB_r) >>> 1);
+            GV = (shift_reg[6] + shift_reg[8]) >>> 1;
             delta_V = (shift_reg[6] > shift_reg[8]) ? (shift_reg[6] - shift_reg[8]) : (shift_reg[8] - shift_reg[6]);
             delta_H = (shift_reg[4] > shift_reg[10]) ? (shift_reg[4] - shift_reg[10]) : (shift_reg[10] - shift_reg[4]);
             weight_sel = (delta_V < delta_H);   // 0: Wv = 1/4, Wh = 3/4 | 1: Wv = 3/4, Wh = 1/4 
 
             // interpolation R
-            KR_t = shift_reg[6] - ((shift_reg[3] + shift_reg[9]) >> 1);
-            KR_b = shift_reg[8] - ((shift_reg[5] + shift_reg[11]) >> 1);
-            KR_l = shift_reg[4] - ((shift_reg[3] + shift_reg[5]) >> 1);
-            KR_r = shift_reg[10] - ((shift_reg[9] + shift_reg[11]) >> 1);
+            KR_t = shift_reg[6] - ((shift_reg[3] + shift_reg[9]) >>> 1);
+            KR_b = shift_reg[8] - ((shift_reg[5] + shift_reg[11]) >>> 1);
+            KR_l = shift_reg[4] - ((shift_reg[3] + shift_reg[5]) >>> 1);
+            KR_r = shift_reg[10] - ((shift_reg[9] + shift_reg[11]) >>> 1);
         end
         
         2'b00: begin              // G phase: RGGB
             // interpolate B
-            KBG_t = ((shift_reg[3] + shift_reg[9]) >> 1) - shift_reg[6];
-            KBG_b = ((shift_reg[5] + shift_reg[11]) >> 1) - shift_reg[8];
+            KBG_t = ((shift_reg[3] + shift_reg[9]) >>> 1) - shift_reg[6];
+            KBG_b = ((shift_reg[5] + shift_reg[11]) >>> 1) - shift_reg[8];
             // interpolate R
-            KRG_l = ((shift_reg[1] + shift_reg[3] + shift_reg[5] + shift_reg[7]) >> 2) - shift_reg[4];
-            KRG_r = ((shift_reg[7] + shift_reg[9] + shift_reg[11] + shift_reg[13]) >> 2) - shift_reg[10];
+            KRG_l = ((shift_reg[1] + shift_reg[3] + shift_reg[5] + shift_reg[7]) >>> 2) - shift_reg[4];
+            KRG_r = ((shift_reg[7] + shift_reg[9] + shift_reg[11] + shift_reg[13]) >>> 2) - shift_reg[10];
         end
         
         2'b01: begin              // R phase: GRBG
-            KR_l = shift_reg[4] - ((shift_reg[1] + shift_reg[7]) >> 1);       //G - (R left + R right)/2
-            KR_r = shift_reg[10] - ((shift_reg[7] + shift_reg[13]) >> 1);     
-            GH = shift_reg[7] + ((KR_l + KR_r) >> 1);
-            GV = (shift_reg[6] + shift_reg[8]) >> 1;
+            KR_l = shift_reg[4] - ((shift_reg[1] + shift_reg[7]) >>> 1);       //G - (R left + R right)/2
+            KR_r = shift_reg[10] - ((shift_reg[7] + shift_reg[13]) >>> 1);     
+            GH = shift_reg[7] + ((KR_l + KR_r) >>> 1);
+            GV = (shift_reg[6] + shift_reg[8]) >>> 1;
             delta_V = (shift_reg[6] > shift_reg[8]) ? (shift_reg[6] - shift_reg[8]) : (shift_reg[8] - shift_reg[6]);
             delta_H = (shift_reg[4] > shift_reg[10]) ? (shift_reg[4] - shift_reg[10]) : (shift_reg[10] - shift_reg[4]);
             weight_sel = (delta_V < delta_H);   // 0: Wv = 1/4, Wh = 3/4 | 1: Wv = 3/4, Wh = 1/4
 
             // interpolation B
-            KB_t = shift_reg[6] - ((shift_reg[3] + shift_reg[9]) >> 1);
-            KB_b = shift_reg[8] - ((shift_reg[5] + shift_reg[11]) >> 1);
-            KB_l = shift_reg[4] - ((shift_reg[3] + shift_reg[5]) >> 1);
-            KB_r = shift_reg[10] - ((shift_reg[9] + shift_reg[11]) >> 1);
+            KB_t = shift_reg[6] - ((shift_reg[3] + shift_reg[9]) >>> 1);
+            KB_b = shift_reg[8] - ((shift_reg[5] + shift_reg[11]) >>> 1);
+            KB_l = shift_reg[4] - ((shift_reg[3] + shift_reg[5]) >>> 1);
+            KB_r = shift_reg[10] - ((shift_reg[9] + shift_reg[11]) >>> 1);
         end
     endcase
 end
@@ -196,27 +196,27 @@ end
 always@(*) begin
     case({row_idx[0], col_idx[0]})
         2'b11: begin              // G phase: BGGR
-            r_hat <= shift_reg[7] - ((KRG_t + KRG_b) >> 1);
-            g_hat <= shift_reg[7];
-            b_hat <= shift_reg[7] - ((KBG_l + KBG_r) >> 1);
+            r_hat = shift_reg[7] - ((KRG_t + KRG_b) >>> 1);
+            g_hat = shift_reg[7];
+            b_hat = shift_reg[7] - ((KBG_l + KBG_r) >>> 1);
         end
 
         2'b10: begin              // B phase: GBRG
-            r_hat = g_hat - ((KR_t + KR_b + KR_l + KR_r) >> 2);
-            g_hat = (weight_sel) ? ((GV- (GV >> 2)) + (GH >> 2)) : ((GH- (GH >> 2)) + (GV >> 2));
-            b_hat <= shift_reg[7];
+            g_hat = (weight_sel) ? ((GV- (GV >>> 2)) + (GH >>> 2)) : ((GH- (GH >>> 2)) + (GV >>> 2));
+            r_hat = g_hat - ((KR_t + KR_b + KR_l + KR_r) >>> 2);
+            b_hat = shift_reg[7];
         end
         
         2'b00: begin              // G phase: RGGB
-            r_hat <= shift_reg[7] - ((KRG_l + KRG_r) >> 1);
-            g_hat <= shift_reg[7];
-            b_hat <= shift_reg[7] - ((KBG_t + KBG_l) >> 1);
+            r_hat = shift_reg[7] - ((KRG_l + KRG_r) >>> 1);
+            g_hat = shift_reg[7];
+            b_hat = shift_reg[7] - ((KBG_t + KBG_l) >>> 1);
         end
         
         2'b01: begin              // B phase: GRBG
             r_hat = shift_reg[7];
-            g_hat = (weight_sel) ? ((GV- (GV >> 2)) + (GH >> 2)) : ((GH- (GH >> 2)) + (GV >> 2));
-            b_hat <= g_hat - ((KB_t + KB_b + KB_l + KB_r) >> 2);
+            g_hat = (weight_sel) ? ((GV- (GV >>> 2)) + (GH >>> 2)) : ((GH- (GH >>> 2)) + (GV >>> 2));
+            b_hat = g_hat - ((KB_t + KB_b + KB_l + KB_r) >>> 2);
         end
     endcase
 end
@@ -244,9 +244,9 @@ always@(posedge clk or posedge reset) begin
         wr_g <= 1;
         wr_b <= 1;
 
-        wdata_r <= (r_hat[11:8] == 4'hf) ? 0 : r_hat;
-        wdata_g <= (g_hat[11:8] == 4'hf) ? 0 : g_hat;
-        wdata_b <= (b_hat[11:8] == 4'hf) ? 0 : b_hat; 
+        wdata_r <= (r_hat[11]) ? 0 : ((|r_hat[10:8]) ? 255 : r_hat);
+        wdata_g <= (g_hat[11]) ? 0 : ((|g_hat[10:8]) ? 255 : g_hat);
+        wdata_b <= (b_hat[11]) ? 0 : ((|b_hat[10:8]) ? 255 : b_hat); 
 
         done <= ({row_idx,col_idx} == 14'd16253);
     end
