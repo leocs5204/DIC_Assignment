@@ -2,8 +2,8 @@
 `define End_CYCLE 1000000
 `define cycle 40.0
 
-`define PAT "./mosaic/test1.dat"  
-`define OUT_F "./test1.raw"
+`define PAT "./mosaic/test6.dat"  
+`define OUT_F "./test6.raw"
 
 module testfixture();
 

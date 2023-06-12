@@ -1,0 +1,8 @@
+C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v {1 {vlog -work work -stats=none C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module demosaic
+
+Top level modules:
+	demosaic
+
+} {} {}}

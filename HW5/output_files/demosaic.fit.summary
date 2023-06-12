@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jun 06 14:57:26 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : demosaic
+Top-level Entity Name : demosaic
+Family : Cyclone IV E
+Device : EP4CE55F23A7
+Timing Models : Final
+Total logic elements : 7,174 / 55,856 ( 13 % )
+    Total combinational functions : 7,028 / 55,856 ( 13 % )
+    Dedicated logic registers : 3,166 / 55,856 ( 6 % )
+Total registers : 3166
+Total pins : 105 / 325 ( 32 % )
+Total virtual pins : 0
+Total memory bits : 0 / 2,396,160 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 308 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

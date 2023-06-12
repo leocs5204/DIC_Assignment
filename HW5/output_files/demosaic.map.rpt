@@ -1,0 +1,1104 @@
+Analysis & Synthesis report for demosaic
+Tue Jun 06 14:56:42 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |demosaic
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Jun 06 14:56:42 2023       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; demosaic                                    ;
+; Top-level Entity Name              ; demosaic                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 8,088                                       ;
+;     Total combinational functions  ; 7,025                                       ;
+;     Dedicated logic registers      ; 3,166                                       ;
+; Total registers                    ; 3166                                        ;
+; Total pins                         ; 105                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE55F23A7       ;                    ;
+; Top-level entity name                                            ; demosaic           ; demosaic           ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processor 3            ;   0.3%      ;
+;     Processor 4            ;   0.3%      ;
+;     Processor 5            ;   0.3%      ;
+;     Processor 6            ;   0.2%      ;
+;     Processor 7            ;   0.2%      ;
+;     Processor 8            ;   0.2%      ;
+;     Processors 9-12        ;   0.2%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; demosaic.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 8,088       ;
+;                                             ;             ;
+; Total combinational functions               ; 7025        ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 2886        ;
+;     -- 3 input functions                    ; 4007        ;
+;     -- <=2 input functions                  ; 132         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 6524        ;
+;     -- arithmetic mode                      ; 501         ;
+;                                             ;             ;
+; Total registers                             ; 3166        ;
+;     -- Dedicated logic registers            ; 3166        ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 105         ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 3255        ;
+; Total fan-out                               ; 35593       ;
+; Average fan-out                             ; 3.42        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |demosaic                  ; 7025 (7025)         ; 3166 (3166)               ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |demosaic           ; demosaic    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; KRG_r[11]                                            ; Decoder1            ; yes                    ;
+; KRG_l[11]                                            ; Decoder1            ; yes                    ;
+; KRG_r[10]                                            ; Decoder1            ; yes                    ;
+; KRG_l[10]                                            ; Decoder1            ; yes                    ;
+; KRG_r[9]                                             ; Decoder1            ; yes                    ;
+; KRG_l[9]                                             ; Decoder1            ; yes                    ;
+; KRG_r[8]                                             ; Decoder1            ; yes                    ;
+; KRG_l[8]                                             ; Decoder1            ; yes                    ;
+; KRG_r[7]                                             ; Decoder1            ; yes                    ;
+; KRG_l[7]                                             ; Decoder1            ; yes                    ;
+; KRG_r[6]                                             ; Decoder1            ; yes                    ;
+; KRG_l[6]                                             ; Decoder1            ; yes                    ;
+; KRG_r[5]                                             ; Decoder1            ; yes                    ;
+; KRG_l[5]                                             ; Decoder1            ; yes                    ;
+; KRG_r[4]                                             ; Decoder1            ; yes                    ;
+; KRG_l[4]                                             ; Decoder1            ; yes                    ;
+; KRG_r[3]                                             ; Decoder1            ; yes                    ;
+; KRG_l[3]                                             ; Decoder1            ; yes                    ;
+; KRG_r[2]                                             ; Decoder1            ; yes                    ;
+; KRG_l[2]                                             ; Decoder1            ; yes                    ;
+; KRG_r[1]                                             ; Decoder1            ; yes                    ;
+; KRG_l[1]                                             ; Decoder1            ; yes                    ;
+; KRG_r[0]                                             ; Decoder1            ; yes                    ;
+; KRG_l[0]                                             ; Decoder1            ; yes                    ;
+; GH[10]                                               ; Mux173              ; yes                    ;
+; GH[11]                                               ; Mux173              ; yes                    ;
+; GH[9]                                                ; Mux173              ; yes                    ;
+; GH[8]                                                ; Mux173              ; yes                    ;
+; GH[7]                                                ; Mux173              ; yes                    ;
+; GH[6]                                                ; Mux173              ; yes                    ;
+; GH[5]                                                ; Mux173              ; yes                    ;
+; GH[4]                                                ; Mux173              ; yes                    ;
+; GH[3]                                                ; Mux173              ; yes                    ;
+; GH[2]                                                ; Mux173              ; yes                    ;
+; GH[1]                                                ; Mux173              ; yes                    ;
+; GH[0]                                                ; Mux173              ; yes                    ;
+; GV[7]                                                ; Mux173              ; yes                    ;
+; GV[6]                                                ; Mux173              ; yes                    ;
+; GV[5]                                                ; Mux173              ; yes                    ;
+; GV[4]                                                ; Mux173              ; yes                    ;
+; GV[3]                                                ; Mux173              ; yes                    ;
+; GV[2]                                                ; Mux173              ; yes                    ;
+; GV[1]                                                ; Mux173              ; yes                    ;
+; GV[0]                                                ; Mux173              ; yes                    ;
+; weight_sel                                           ; Mux173              ; yes                    ;
+; KR_r[11]                                             ; Mux173              ; yes                    ;
+; KR_l[11]                                             ; Mux173              ; yes                    ;
+; KR_r[10]                                             ; Mux173              ; yes                    ;
+; KR_l[10]                                             ; Mux173              ; yes                    ;
+; KR_r[9]                                              ; Mux173              ; yes                    ;
+; KR_l[9]                                              ; Mux173              ; yes                    ;
+; KR_r[8]                                              ; Mux173              ; yes                    ;
+; KR_l[8]                                              ; Mux173              ; yes                    ;
+; KR_r[7]                                              ; Mux173              ; yes                    ;
+; KR_l[7]                                              ; Mux173              ; yes                    ;
+; KR_r[6]                                              ; Mux173              ; yes                    ;
+; KR_l[6]                                              ; Mux173              ; yes                    ;
+; KR_r[5]                                              ; Mux173              ; yes                    ;
+; KR_l[5]                                              ; Mux173              ; yes                    ;
+; KR_r[4]                                              ; Mux173              ; yes                    ;
+; KR_l[4]                                              ; Mux173              ; yes                    ;
+; KR_r[3]                                              ; Mux173              ; yes                    ;
+; KR_l[3]                                              ; Mux173              ; yes                    ;
+; KR_r[2]                                              ; Mux173              ; yes                    ;
+; KR_l[2]                                              ; Mux173              ; yes                    ;
+; KR_r[1]                                              ; Mux173              ; yes                    ;
+; KR_l[1]                                              ; Mux173              ; yes                    ;
+; KR_r[0]                                              ; Mux173              ; yes                    ;
+; KR_l[0]                                              ; Mux173              ; yes                    ;
+; KR_b[11]                                             ; Mux182              ; yes                    ;
+; KR_t[11]                                             ; Mux182              ; yes                    ;
+; KR_b[10]                                             ; Mux182              ; yes                    ;
+; KR_t[10]                                             ; Mux182              ; yes                    ;
+; KR_b[9]                                              ; Mux182              ; yes                    ;
+; KR_t[9]                                              ; Mux182              ; yes                    ;
+; KR_b[8]                                              ; Mux182              ; yes                    ;
+; KR_t[8]                                              ; Mux182              ; yes                    ;
+; KR_b[7]                                              ; Mux182              ; yes                    ;
+; KR_t[7]                                              ; Mux182              ; yes                    ;
+; KR_b[6]                                              ; Mux182              ; yes                    ;
+; KR_t[6]                                              ; Mux182              ; yes                    ;
+; KR_b[5]                                              ; Mux182              ; yes                    ;
+; KR_t[5]                                              ; Mux182              ; yes                    ;
+; KR_b[4]                                              ; Mux182              ; yes                    ;
+; KR_t[4]                                              ; Mux182              ; yes                    ;
+; KR_b[3]                                              ; Mux182              ; yes                    ;
+; KR_t[3]                                              ; Mux182              ; yes                    ;
+; KR_b[2]                                              ; Mux182              ; yes                    ;
+; KR_t[2]                                              ; Mux182              ; yes                    ;
+; KR_b[1]                                              ; Mux182              ; yes                    ;
+; KR_t[1]                                              ; Mux182              ; yes                    ;
+; KR_b[0]                                              ; Mux182              ; yes                    ;
+; KR_t[0]                                              ; Mux182              ; yes                    ;
+; KRG_t[11]                                            ; Decoder1            ; yes                    ;
+; KRG_b[11]                                            ; Decoder1            ; yes                    ;
+; KRG_t[10]                                            ; Decoder1            ; yes                    ;
+; KRG_b[10]                                            ; Decoder1            ; yes                    ;
+; KRG_t[9]                                             ; Decoder1            ; yes                    ;
+; KRG_b[9]                                             ; Decoder1            ; yes                    ;
+; KRG_t[8]                                             ; Decoder1            ; yes                    ;
+; Number of user-specified and inferred latches = 201  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3166  ;
+; Number of registers using Synchronous Clear  ; 7     ;
+; Number of registers using Synchronous Load   ; 22    ;
+; Number of registers using Asynchronous Clear ; 3165  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2131  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; col_idx[1]                             ; 43      ;
+; row_idx[0]                             ; 90      ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[0][0]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[1][0]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[2][6]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[3][7]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[4][2]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[5][1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[6][1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[7][1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[8][3]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[9][1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[10][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[11][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[12][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[13][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[14][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[15][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[16][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[17][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[18][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[19][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[20][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[21][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[22][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[23][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[24][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[25][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[26][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[27][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[28][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[29][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[30][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[31][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[32][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[33][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[34][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[35][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[36][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[37][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[38][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[39][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[40][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[41][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[42][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[43][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[44][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[45][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[46][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[47][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[48][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[49][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[50][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[51][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[52][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[53][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[54][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[55][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[56][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[57][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[58][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[59][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[60][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[61][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[62][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[63][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[64][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[65][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[66][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[67][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[68][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[69][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[70][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[71][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[72][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[73][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[74][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[75][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[76][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[77][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[78][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[79][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[80][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[81][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[82][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[83][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[84][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[85][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[86][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[87][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[88][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[89][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[90][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[91][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[92][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[93][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[94][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[95][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[96][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[97][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[98][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[99][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[100][6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[101][0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[102][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[103][4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[104][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[105][2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[106][4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[107][1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[108][2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[109][2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[110][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[111][4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[112][2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[113][1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[114][6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[115][3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[116][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[117][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[118][6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[119][6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[120][0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[121][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[122][0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[123][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[124][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[125][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[126][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf2[127][0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[0][5]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[1][5]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[2][6]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[3][7]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[4][7]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[5][2]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[6][1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[7][6]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[8][7]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[9][7]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[10][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[11][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[12][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[13][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[14][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[15][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[16][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[17][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[18][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[19][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[20][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[21][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[22][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[23][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[24][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[25][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[26][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[27][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[28][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[29][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[30][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[31][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[32][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[33][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[34][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[35][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[36][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[37][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[38][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[39][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[40][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[41][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[42][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[43][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[44][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[45][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[46][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[47][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[48][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[49][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[50][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[51][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[52][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[53][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[54][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[55][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[56][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[57][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[58][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[59][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[60][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[61][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[62][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[63][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[64][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[65][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[66][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[67][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[68][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[69][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[70][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[71][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[72][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[73][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[74][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[75][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[76][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[77][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[78][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[79][5]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[80][4]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[81][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[82][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[83][6]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[84][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[85][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[86][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[87][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[88][3]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[89][1]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[90][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[91][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[92][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[93][2]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[94][0]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[95][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[96][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[97][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[98][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[99][7]  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[100][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[101][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[102][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[103][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[104][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[105][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[106][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[107][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[108][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[109][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[110][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[111][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[112][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[113][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[114][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[115][1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[116][3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[117][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[118][5] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[119][1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[120][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[121][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[122][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[123][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[124][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[125][7] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[126][4] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |demosaic|line_buf1[127][0] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |demosaic|wdata_r[5]~reg0   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |demosaic|wdata_g[5]~reg0   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |demosaic|wdata_b[0]~reg0   ;
+; 3:1                ; 40 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |demosaic|shift_reg[4][3]   ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |demosaic|Mux173            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |demosaic|Mux161            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |demosaic|Mux185            ;
+; 4:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |demosaic|Mux142            ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |demosaic|Mux115            ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |demosaic|Mux115            ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |demosaic|Mux148            ;
+; 7:1                ; 24 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |demosaic|Mux116            ;
+; 8:1                ; 64 bits   ; 320 LEs       ; 320 LEs              ; 0 LEs                  ; No         ; |demosaic|Mux127            ;
+; 9:1                ; 24 bits   ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; No         ; |demosaic|shift_reg[1][7]   ;
+; 9:1                ; 24 bits   ; 144 LEs       ; 144 LEs              ; 0 LEs                  ; No         ; |demosaic|shift_reg[9][0]   ;
+; 16:1               ; 64 bits   ; 640 LEs       ; 640 LEs              ; 0 LEs                  ; No         ; |demosaic|Mux147            ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |demosaic|Mux127            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |demosaic ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; WIDTH          ; 128   ; Signed Integer                                  ;
+; HEIGHT         ; 128   ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 105                         ;
+; cycloneiii_ff         ; 3166                        ;
+;     CLR               ; 1027                        ;
+;     CLR SCLR          ; 7                           ;
+;     ENA CLR           ; 2109                        ;
+;     ENA CLR SLD       ; 22                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 7025                        ;
+;     arith             ; 501                         ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 449                         ;
+;     normal            ; 6524                        ;
+;         0 data inputs ; 26                          ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 3558                        ;
+;         4 data inputs ; 2886                        ;
+;                       ;                             ;
+; Max LUT depth         ; 15.10                       ;
+; Average LUT depth     ; 8.40                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Tue Jun 06 14:56:29 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off demosaic -c demosaic
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file testfixture.v
+    Info (12023): Found entity 1: testfixture File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file demosaic.v
+    Info (12023): Found entity 1: demosaic File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 1
+Info (12127): Elaborating entity "demosaic" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at demosaic.v(29): object "KBG_b" assigned a value but never read File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 29
+Warning (10230): Verilog HDL assignment warning at demosaic.v(47): truncated value with size 32 to match size of target (7) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 47
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(94): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 94
+Warning (10230): Verilog HDL assignment warning at demosaic.v(125): truncated value with size 32 to match size of target (7) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 125
+Warning (10230): Verilog HDL assignment warning at demosaic.v(129): truncated value with size 32 to match size of target (7) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 129
+Warning (10230): Verilog HDL assignment warning at demosaic.v(156): truncated value with size 9 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 156
+Warning (10230): Verilog HDL assignment warning at demosaic.v(157): truncated value with size 9 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 157
+Warning (10230): Verilog HDL assignment warning at demosaic.v(181): truncated value with size 9 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 181
+Warning (10230): Verilog HDL assignment warning at demosaic.v(182): truncated value with size 9 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 182
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KRG_t", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KRG_b", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KBG_l", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KBG_r", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KB_l", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KB_r", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "GH", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "GV", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "delta_V", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "delta_H", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "weight_sel", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KR_t", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KR_b", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KR_l", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KR_r", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KB_t", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KB_b", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KBG_t", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KRG_l", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at demosaic.v(140): inferring latch(es) for variable "KRG_r", which holds its previous value in one or more paths through the always construct File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (10230): Verilog HDL assignment warning at demosaic.v(247): truncated value with size 32 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 247
+Warning (10230): Verilog HDL assignment warning at demosaic.v(248): truncated value with size 32 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 248
+Warning (10230): Verilog HDL assignment warning at demosaic.v(249): truncated value with size 32 to match size of target (8) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 249
+Info (10041): Inferred latch for "KRG_r[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_r[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_l[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_t[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_b[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_t[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_r[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_l[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_b[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KR_t[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "weight_sel" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GV[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "GH[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_r[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KB_l[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_r[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KBG_l[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_b[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[0]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[1]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[2]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[3]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[4]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[5]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[6]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[7]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[8]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[9]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[10]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (10041): Inferred latch for "KRG_t[11]" at demosaic.v(140) File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "KRG_r[9]" merged with LATCH primitive "KRG_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_r[10]" merged with LATCH primitive "KRG_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_l[9]" merged with LATCH primitive "KRG_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_l[10]" merged with LATCH primitive "KRG_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "GH[11]" merged with LATCH primitive "GH[10]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_r[10]" merged with LATCH primitive "KR_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_r[9]" merged with LATCH primitive "KR_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_l[10]" merged with LATCH primitive "KR_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_l[9]" merged with LATCH primitive "KR_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_b[9]" merged with LATCH primitive "KR_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_b[10]" merged with LATCH primitive "KR_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_t[9]" merged with LATCH primitive "KR_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KR_t[10]" merged with LATCH primitive "KR_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_t[9]" merged with LATCH primitive "KRG_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_t[10]" merged with LATCH primitive "KRG_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_b[9]" merged with LATCH primitive "KRG_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KRG_b[10]" merged with LATCH primitive "KRG_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_l[9]" merged with LATCH primitive "KBG_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_l[10]" merged with LATCH primitive "KBG_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_t[9]" merged with LATCH primitive "KBG_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_t[10]" merged with LATCH primitive "KBG_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_l[10]" merged with LATCH primitive "KB_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_l[9]" merged with LATCH primitive "KB_l[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_r[10]" merged with LATCH primitive "KB_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_r[9]" merged with LATCH primitive "KB_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_b[9]" merged with LATCH primitive "KB_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_b[10]" merged with LATCH primitive "KB_b[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_t[9]" merged with LATCH primitive "KB_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KB_t[10]" merged with LATCH primitive "KB_t[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_r[9]" merged with LATCH primitive "KBG_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Info (13026): Duplicate LATCH primitive "KBG_r[10]" merged with LATCH primitive "KBG_r[11]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+Warning (13012): Latch KR_r[11] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[11] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[8] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[8] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[7] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[7] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[6] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[6] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[5] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[5] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[4] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[4] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[3] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[3] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[2] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[2] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[1] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[1] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_r[0] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KR_l[0] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[11] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[11] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[8] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[8] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[7] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[7] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[6] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[6] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[5] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[5] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[4] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[4] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[3] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[3] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[2] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[2] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[1] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[1] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_r[0] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Warning (13012): Latch KB_l[0] has unsafe behavior File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 140
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal row_idx[0] File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 123
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/output_files/demosaic.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 24 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "rdata_r[0]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[1]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[2]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[3]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[4]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[5]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[6]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_r[7]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 9
+    Warning (15610): No output dependent on input pin "rdata_g[0]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[1]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[2]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[3]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[4]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[5]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[6]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_g[7]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 13
+    Warning (15610): No output dependent on input pin "rdata_b[0]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[1]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[2]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[3]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[4]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[5]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[6]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+    Warning (15610): No output dependent on input pin "rdata_b[7]" File: C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/demosaic.v Line: 17
+Info (21057): Implemented 8193 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 70 output pins
+    Info (21061): Implemented 8088 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 138 warnings
+    Info: Peak virtual memory: 4876 megabytes
+    Info: Processing ended: Tue Jun 06 14:56:42 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:20
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/output_files/demosaic.map.smsg.
+
+

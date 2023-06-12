@@ -1,0 +1,1058 @@
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.testfixture
+# vsim work.testfixture 
+# Start time: 13:30:43 on Jun 09,2023
+# Loading work.testfixture
+# Loading work.demosaic
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/clk \
+sim:/testfixture/u_demosaic/reset
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Leo  Hostname: DESKTOP-2RCENLH  ProcessID: 7912
+#           Attempting to use alternate WLF file "./wlftgmxqa2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgmxqa2
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/addr_r \
+sim:/testfixture/u_demosaic/wdata_r \
+sim:/testfixture/u_demosaic/wdata_g \
+sim:/testfixture/u_demosaic/wdata_b
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/g_hat \
+sim:/testfixture/u_demosaic/r_hat \
+sim:/testfixture/u_demosaic/b_hat
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/shift_reg
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/col_idx \
+sim:/testfixture/u_demosaic/row_idx
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/GH \
+sim:/testfixture/u_demosaic/GV
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+add wave -position insertpoint  \
+sim:/testfixture/u_demosaic/delta_V \
+sim:/testfixture/u_demosaic/delta_H
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+restart
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145
+# Compile of testfixture.v was successful.
+# Compile of demosaic.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.testfixture
+# Loading work.demosaic
+run -all
+# GetModuleFileName: тぃ﹚家舱
+# 
+# 
+# ********************************************************************
+# **                        Simulation Start                        **
+# ********************************************************************
+# ********************************************************************
+# **               Simulation completed successfully!               **
+# ********************************************************************
+# ** Note: $finish    : C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v(145)
+#    Time: 655580 ns  Iteration: 1  Instance: /testfixture
+# 1
+# Break in Module testfixture at C:/Users/Leo/Desktop/code/DIC_Assignment/HW5/testfixture.v line 145

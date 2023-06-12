@@ -1,0 +1,6 @@
+test1.png: 28.32
+test2.png: 26.82
+test3.png: 32.09
+test4.png: 24.37
+test5.png: 26.01
+test6.png: 26.54
